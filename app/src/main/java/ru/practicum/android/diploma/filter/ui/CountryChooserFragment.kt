@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.practicum.android.diploma.R
 import ru.practicum.android.diploma.common.util.debounce
 import ru.practicum.android.diploma.databinding.FragmentCountryChooserBinding
-import ru.practicum.android.diploma.filter.presentation.CountryChooserScreenState
+import ru.practicum.android.diploma.filter.presentation.states.CountryChooserScreenState
 import ru.practicum.android.diploma.filter.presentation.CountryViewModel
 import ru.practicum.android.diploma.filter.ui.adapters.CountryAdapter
 

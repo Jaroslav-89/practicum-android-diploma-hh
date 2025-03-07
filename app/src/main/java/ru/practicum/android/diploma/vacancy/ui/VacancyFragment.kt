@@ -113,7 +113,7 @@ class VacancyFragment : Fragment(R.layout.fragment_vacancy) {
 
     private fun showError() {
         hideAllView()
-        binding.errorPlaceholderImage.setImageResource(R.drawable.placeholder_error_server)
+        binding.errorPlaceholderImage.setImageResource(R.drawable.placeholder_server_error_cat)
         binding.errorPlaceholderText.setText(R.string.server_throwable_tv)
         binding.clErrorPlaceholder.isVisible = true
     }

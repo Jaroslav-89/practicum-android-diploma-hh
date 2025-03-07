@@ -9,6 +9,7 @@ import ru.practicum.android.diploma.common.util.NetworkResult
 import ru.practicum.android.diploma.filter.domain.api.FilterInteractor
 import ru.practicum.android.diploma.filter.domain.models.Industry
 import ru.practicum.android.diploma.filter.presentation.models.IndustryUi
+import ru.practicum.android.diploma.filter.presentation.states.IndustryChooserScreenState
 
 class IndustryViewModel(private val interactor: FilterInteractor) : ViewModel() {
 

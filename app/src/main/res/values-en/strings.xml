@@ -3,18 +3,18 @@
     <string name="app_name">Job Search</string>
 
     <!--    common-->
-    <string name="internet_throwable_tv">No Internet connection</string>
+    <string name="internet_throwable_tv">No Internet</string>
     <string name="toast_internet_throwable">Check your Internet connection</string>
     <string name="toast_unknown_error">An error occurred</string>
     <string name="server_throwable_tv">Server error</string>
-    <string name="load_vacancy_throwable_tv">Cannot get\nthe list of vacancies</string>
+    <string name="load_vacancy_throwable_tv">Couldn\'t get\nthe list of vacancies</string>
     <!--    bottom navigation-->
     <string name="main_bottom_nav">Home</string>
     <string name="favorite_bottom_nav">Favorites</string>
-    <string name="about_bottom_nav">Team</string>
+    <string name="about_bottom_nav">About</string>
     <!--    search vacancy fragment-->
-    <string name="search_title_tv">Vacancy search</string>
-    <string name="hint_search_vacancy_et">Enter request</string>
+    <string name="search_title_tv">Job search</string>
+    <string name="hint_search_vacancy_et">Search query</string>
     <string name="no_vacancies_found_title">No vacancies found</string>
     <!--    filter fragment-->
     <string name="filter_settings_title_tv">Filter settings</string>
@@ -36,7 +36,7 @@
     <string name="choosing_area_title_tv">Select region</string>
     <string name="hint_choosing_area_et">Enter region</string>
     <string name="nothing_found_choosing_area_tv">The region doesn\'t exist</string>
-    <string name="search_throwable_choosing_area_tv">Cannot get \nthe list</string>
+    <string name="search_throwable_choosing_area_tv">Couldn\'t get \nthe list</string>
     <!--    choosing industry fragment-->
     <string name="choosing_industry_title_tv">Select industry</string>
     <string name="choosing_industry_hint_tet">Enter industry</string>

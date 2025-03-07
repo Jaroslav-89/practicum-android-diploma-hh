@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.practicum.android.diploma.R
 import ru.practicum.android.diploma.databinding.FragmentIndustryChooserBinding
-import ru.practicum.android.diploma.filter.presentation.IndustryChooserScreenState
+import ru.practicum.android.diploma.filter.presentation.states.IndustryChooserScreenState
 import ru.practicum.android.diploma.filter.presentation.IndustryViewModel
 import ru.practicum.android.diploma.filter.presentation.models.IndustryUi
 import ru.practicum.android.diploma.filter.ui.adapters.IndustryAdapter

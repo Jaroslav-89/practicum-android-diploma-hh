@@ -1,4 +1,4 @@
-package ru.practicum.android.diploma.filter.presentation
+package ru.practicum.android.diploma.filter.presentation.states
 
 import ru.practicum.android.diploma.filter.domain.models.Area
 

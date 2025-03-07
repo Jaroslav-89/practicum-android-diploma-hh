@@ -7,11 +7,13 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.practicum.android.diploma.common.util.NetworkResult
+import ru.practicum.android.diploma.common.util.SingleLiveEvent
 import ru.practicum.android.diploma.common.util.debounce
 import ru.practicum.android.diploma.filter.domain.api.FilterInteractor
 import ru.practicum.android.diploma.filter.domain.models.Area
 import ru.practicum.android.diploma.filter.domain.models.Country
 import ru.practicum.android.diploma.filter.domain.models.FilterParameters
+import ru.practicum.android.diploma.filter.presentation.states.AreaChooserScreenState
 
 class AreaViewModel(private val interactor: FilterInteractor) : ViewModel() {
 
@@ -29,6 +31,9 @@ class AreaViewModel(private val interactor: FilterInteractor) : ViewModel() {
 
     private val _state = MutableLiveData<AreaChooserScreenState>(AreaChooserScreenState.Loading)
     val state: LiveData<AreaChooserScreenState> get() = _state
+
+    private val _closeEvent = SingleLiveEvent<Boolean>()
+    val closeEvent: LiveData<Boolean> get() = _closeEvent
 
     init {
         loadedFilter = interactor.getCurrentFilter()
@@ -50,14 +55,18 @@ class AreaViewModel(private val interactor: FilterInteractor) : ViewModel() {
     }
 
     fun areaSelected(area: Area) {
-        if (area != loadedFilter.area) {
-            val filter: FilterParameters = if (loadedFilter.country == null) {
-                val country = getCountryForArea(area)
-                loadedFilter.copy(area = area, country = country)
-            } else {
-                loadedFilter.copy(area = area)
+        viewModelScope.launch {
+            if (area != loadedFilter.area) {
+                _state.postValue(AreaChooserScreenState.Loading)
+                val filter: FilterParameters = if (loadedFilter.country == null) {
+                    val country = getCountryForArea(area)
+                    loadedFilter.copy(area = area, country = country)
+                } else {
+                    loadedFilter.copy(area = area)
+                }
+                interactor.updateFilter(filter)
             }
-            interactor.updateFilter(filter)
+            _closeEvent.postValue(true)
         }
     }
 

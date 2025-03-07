@@ -132,7 +132,7 @@ class SimilarVacanciesFragment : Fragment(R.layout.fragment_similar_vacancies) {
     }
 
     private fun showContent(foundVacancyData: VacancyListData, isPageLoading: Boolean) {
-        adapter.updateData(foundVacancyData.items)
+        adapter.submitList(foundVacancyData.items)
         if (foundVacancyData.page == 0) {
             binding.rvSimilar.scrollToPosition(0)
         }

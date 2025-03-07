@@ -9,6 +9,7 @@ import ru.practicum.android.diploma.common.util.NetworkResult
 import ru.practicum.android.diploma.filter.domain.api.FilterInteractor
 import ru.practicum.android.diploma.filter.domain.models.Country
 import ru.practicum.android.diploma.filter.domain.models.FilterParameters
+import ru.practicum.android.diploma.filter.presentation.states.CountryChooserScreenState
 
 class CountryViewModel(private val interactor: FilterInteractor) : ViewModel() {
 

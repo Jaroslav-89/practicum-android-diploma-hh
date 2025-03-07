@@ -13,7 +13,7 @@ import ru.practicum.android.diploma.R
 import ru.practicum.android.diploma.common.util.debounce
 import ru.practicum.android.diploma.databinding.FragmentAreaChooserBinding
 import ru.practicum.android.diploma.filter.domain.models.Area
-import ru.practicum.android.diploma.filter.presentation.AreaChooserScreenState
+import ru.practicum.android.diploma.filter.presentation.states.AreaChooserScreenState
 import ru.practicum.android.diploma.filter.presentation.AreaViewModel
 import ru.practicum.android.diploma.filter.ui.adapters.AreaAdapter
 
@@ -28,7 +28,6 @@ class AreaChooserFragment : Fragment(R.layout.fragment_area_chooser) {
     private val adapter = AreaAdapter {
         if (clickDebounce()) {
             viewModel.areaSelected(it)
-            findNavController().navigateUp()
         }
     }
 
@@ -80,6 +79,12 @@ class AreaChooserFragment : Fragment(R.layout.fragment_area_chooser) {
     private fun setObservables() {
         viewModel.state.observe(viewLifecycleOwner) { state ->
             renderState(state)
+        }
+
+        viewModel.closeEvent.observe(viewLifecycleOwner) { close ->
+            if (close) {
+                findNavController().navigateUp()
+            }
         }
     }
 

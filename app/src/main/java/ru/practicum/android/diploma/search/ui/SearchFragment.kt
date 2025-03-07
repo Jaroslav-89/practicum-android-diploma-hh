@@ -217,7 +217,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             foundVacancyData.found
         )
         binding.vacanciesFound.text = numOfVacancy
-        adapter.updateData(foundVacancyData.items)
+        adapter.submitList(foundVacancyData.items)
         if (foundVacancyData.page == 0) {
             binding.vacancyListRv.scrollToPosition(0)
         }

@@ -62,6 +62,6 @@ class FilterViewModel(private val interactor: FilterInteractor) : ViewModel() {
     }
 
     companion object {
-        private const val SALARY_UPDATE_DELAY_IN_MILLIS = 1000L
+        private const val SALARY_UPDATE_DELAY_IN_MILLIS = 200L
     }
 }
